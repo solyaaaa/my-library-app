@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Library.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">my-library-app</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Library.java</span></div><h1>Library.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Library class that manages a collection of books
+ */
+public class Library {
+    private List&lt;Book&gt; books;
+    
+    /**
+     * Constructor - initializes an empty library
+     */
+<span class="fc" id="L15">    public Library() {</span>
+<span class="fc" id="L16">        this.books = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L17">    }</span>
+    
+    /**
+     * Add a book to the library
+     * @param book The book to add
+     * @return true if successfully added
+     */
+    public boolean addBook(Book book) {
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (book == null) {</span>
+<span class="fc" id="L26">            return false;</span>
+        }
+        
+        // Check if book with same ISBN already exists
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        for (Book existingBook : books) {</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (existingBook.getIsbn().equals(book.getIsbn())) {</span>
+<span class="fc" id="L32">                return false; // Book with this ISBN already exists</span>
+            }
+<span class="fc" id="L34">        }</span>
+        
+<span class="fc" id="L36">        books.add(book);</span>
+<span class="fc" id="L37">        return true;</span>
+    }
+    
+    /**
+     * Get all books in the library
+     * @return List of all books
+     */
+    public List&lt;Book&gt; getAllBooks() {
+<span class="fc" id="L45">        return new ArrayList&lt;&gt;(books); // Return a copy to prevent external modification</span>
+    }
+    
+    /**
+     * Search for books by title
+     * @param title Title to search for
+     * @return List of matching books
+     */
+    public List&lt;Book&gt; searchByTitle(String title) {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (title == null) {</span>
+<span class="fc" id="L55">            return new ArrayList&lt;&gt;();</span>
+        }
+        
+<span class="fc" id="L58">        List&lt;Book&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        for (Book book : books) {</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {</span>
+<span class="fc" id="L61">                result.add(book);</span>
+            }
+<span class="fc" id="L63">        }</span>
+<span class="fc" id="L64">        return result;</span>
+    }
+    
+    /**
+     * Search for books by author
+     * @param author Author to search for
+     * @return List of matching books
+     */
+    public List&lt;Book&gt; searchByAuthor(String author) {
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (author == null) {</span>
+<span class="fc" id="L74">            return new ArrayList&lt;&gt;();</span>
+        }
+        
+<span class="fc" id="L77">        List&lt;Book&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        for (Book book : books) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            if (book.getAuthor().toLowerCase().contains(author.toLowerCase())) {</span>
+<span class="fc" id="L80">                result.add(book);</span>
+            }
+<span class="fc" id="L82">        }</span>
+<span class="fc" id="L83">        return result;</span>
+    }
+    
+    /**
+     * Get the total number of books in the library
+     * @return Number of books
+     */
+    public int getBookCount() {
+<span class="fc" id="L91">        return books.size();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

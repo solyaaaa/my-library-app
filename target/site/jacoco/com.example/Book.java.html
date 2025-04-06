@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">my-library-app</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package com.example;
+
+/**
+ * Represents a book in the library
+ */
+public class Book {
+    private String title;
+    private String author;
+    private String isbn;
+    
+    /**
+     * Constructor for Book
+     * @param title Title of the book
+     * @param author Author of the book
+     * @param isbn ISBN of the book
+     */
+<span class="fc" id="L17">    public Book(String title, String author, String isbn) {</span>
+<span class="fc" id="L18">        this.title = title;</span>
+<span class="fc" id="L19">        this.author = author;</span>
+<span class="fc" id="L20">        this.isbn = isbn;</span>
+<span class="fc" id="L21">    }</span>
+    
+    // Getters and setters
+    public String getTitle() {
+<span class="fc" id="L25">        return title;</span>
+    }
+    
+    public void setTitle(String title) {
+<span class="nc" id="L29">        this.title = title;</span>
+<span class="nc" id="L30">    }</span>
+    
+    public String getAuthor() {
+<span class="fc" id="L33">        return author;</span>
+    }
+    
+    public void setAuthor(String author) {
+<span class="nc" id="L37">        this.author = author;</span>
+<span class="nc" id="L38">    }</span>
+    
+    public String getIsbn() {
+<span class="fc" id="L41">        return isbn;</span>
+    }
+    
+    public void setIsbn(String isbn) {
+<span class="nc" id="L45">        this.isbn = isbn;</span>
+<span class="nc" id="L46">    }</span>
+    
+    @Override
+    public String toString() {
+<span class="nc" id="L50">        return &quot;Book{&quot; +</span>
+                &quot;title='&quot; + title + '\'' +
+                &quot;, author='&quot; + author + '\'' +
+                &quot;, isbn='&quot; + isbn + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
